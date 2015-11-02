@@ -1,0 +1,20 @@
+#!/bin/bash
+# chkconfig: 2345 95 20
+# description: Script to Start Stop Restart jboss
+export JAVA_HOME=/usr/lib/jvm/jdk1.6.1.0_12
+export PATH=$JAVA_HOME/bin:$PATH
+export JBOSS_HOME=/opt/jboss
+
+case $1 in
+start)
+$JBOSS_HOME/bin/standalone.sh -b publicip
+;;
+stop)
+$JBOSS_HOME/bin/jboss-cli.sh --connect command=:shutdown
+;;
+restart)
+$JBOSS_HOME/bin/jboss-cli.sh --connect command=:shutdown
+$JBOSS_HOME/bin/standalone.sh -b publicip
+;;
+esac
+exit $?

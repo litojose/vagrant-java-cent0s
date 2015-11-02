@@ -1,0 +1,12 @@
+configs:
+    use: 'home'
+    home:
+      public_ip: '192.168.1.115'
+      private_ip: '172.28.128.123'
+      connection: 'en0: Wi-Fi (AirPort)'
+    office:
+      public_ip: '192.168.0.115'
+      private_ip: '172.28.128.123'
+      connection: 'en4: Thunderbolt Ethernet'
+domain_name: 'app.example.com'
+hostname: 'javacent0s-box'
